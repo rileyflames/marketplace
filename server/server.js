@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import http from 'http'
 import app from './src/app.js'
 import { connectDB, gracefulShutdown } from './src/config/db.js'

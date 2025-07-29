@@ -31,7 +31,7 @@ app.use(cors({
 app.use(compression())
 
 // built-in middleware
-app.use(json())
+app.use(express.json())
 app.use(urlencoded({ extended: true }))
 
 
@@ -46,6 +46,9 @@ if (process.env.NODE_ENV === 'development'){
 
 
 // routes 
+app.get('/', (req, res)=>{
+    res.send('API is up and running 🚀')
+})
 
 
 // 404 not found

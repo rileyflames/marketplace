@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "main": "server.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -23,5 +23,8 @@
     "morgan": "^1.10.1",
     "winston": "^3.17.0",
     "zod": "^4.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
