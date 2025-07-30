@@ -263,3 +263,12 @@ Stores direct messages between users (can be stored as conversations or message 
 | `participants` | \[ObjectId]                         | Users involved in the conversation |
 | `messages`     | \[{ senderId, content, timestamp }] | Array of message objects           |
 | `lastUpdated`  | Date                                | Timestamp of last message          |
+
+# pnpm
+
+| Item            | Before (`npm`)      | After (`pnpm`)          |
+| --------------- | ------------------- | ----------------------- |
+| Lockfile        | `package-lock.json` | `pnpm-lock.yaml`        |
+| Package manager | `npm`               | `pnpm`                  |
+| Node modules    | flat `node_modules` | symlinked, deduplicated |
+| Install command | `npm install`       | `pnpm install`          |
