@@ -14,7 +14,7 @@ const locationSchema = new mongoose.Schema(
   { _id: false }
 );
 
-const User = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -107,4 +107,14 @@ const User = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model('User', User);
+UserSchema.virtual('ratings', {
+  ref: 'Rating',
+  localField: '_id',
+  foreignField: 'to'
+});
+
+// To ensure virtuals are included in JSON output:
+UserSchema.set('toObject', { virtuals: true });
+UserSchema.set('toJSON', { virtuals: true });
+
+export default mongoose.model('User', UserSchema);
