@@ -33,6 +33,11 @@ const MessageSchema = new mongoose.Schema({
   readAt: {
     type: Date,
     default: null
+  },
+  replyTo: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Message",
+    default: null
   }
 }, { timestamps: true });
 
